@@ -32,4 +32,4 @@ jobs:
           cd build
           zip -r ../deploy.zip .
           cd ..
-          aws lambda update-function-code --function-name=lambda-name --zip-file=fileb://deploy.zip
+          aws lambda update-function-code --function-name=user-msv --zip-file=fileb://deploy.zip
