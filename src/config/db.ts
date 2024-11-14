@@ -11,6 +11,7 @@ export const AppDataSource = new DataSource({
     database: config.DB.NAME,
     synchronize: false,
     logging: true,
+    connectTimeout: 30000,
     entities: ["src/entity/**/*.ts", "src/entity/**/*.js"],
     migrations: ["src/migration/**/*.ts", "src/migration/**/*.js"],
 })
