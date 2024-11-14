@@ -25,7 +25,7 @@ export const signupCognito = async (data: any, token: string) => {
     return response.data;
   } catch (error: any) {
     console.log(error);
-    throw boom.badRequest("Error in signupCognito " + error);
+    throw boom.badRequest("Error in connect signup " + error);
   }
 };
 
