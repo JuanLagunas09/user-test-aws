@@ -29,8 +29,9 @@ export const store = async (
       config.KEY_CONNECT!,
       config.JWT_SECRET_CONNECT!
     );
-
+    console.log("regiter...");
     const resAuth = await userService.store(req.body, token);
+    console.log(resAuth);
     res.json(resAuth);
   } catch (error) {
     console.log(error);

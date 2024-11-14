@@ -12,16 +12,21 @@ export const getHelloAuth = async () => {
 };
 
 export const signupCognito = async (data: any, token: string) => {
-  const response = await axios({
-    method: "POST",
-    url: `${config.URL_AUTH_MSV}/signup`,
-    data,
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  console.log(response);
-  return response.data;
+  try {
+    const response = await axios({
+      method: "POST",
+      url: `${config.URL_AUTH_MSV}/signup`,
+      data,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response);
+    return response.data;
+  } catch (error: any) {
+    console.log(error);
+    throw boom.badRequest("Error in signupCognito " + error);
+  }
 };
 
 export const getUserCognito = async (token: string) => {
