@@ -25,6 +25,7 @@ export class UserService {
     try {
       const signupCognito = await authConnection.signupCognito(data, token);
       // get id cognito
+      console.log(signupCognito);
       if (
         signupCognito &&
         signupCognito.$metadata.httpStatusCode == 200 &&
@@ -38,7 +39,9 @@ export class UserService {
           role: "user",
           id_cognito: signupCognito.UserSub,
         };
+        console.log(userStore);
         const user = this.dbConnection.save(userStore);
+        console.log(user);
         return user;
       }
 

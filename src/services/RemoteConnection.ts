@@ -20,6 +20,7 @@ export const signupCognito = async (data: any, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
+  console.log(response);
   return response.data;
 };
 
