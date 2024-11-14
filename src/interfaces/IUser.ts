@@ -17,6 +17,6 @@ export interface IUser {
 
 export interface ISignUp extends Omit <IUser, 'id' | 'role' | 'status' | 'id_cognito' | 'createdDate' | 'updatedDate'> {}
 
-export interface IProfile extends Pick<IUser, "name" | "lastname" | "username" | "email" | "phone" | "adress"> {}
+export interface IProfile extends Pick<IUser, "name" | "username" | "lastname"  | "email" | "phone" | "adress"> {}
 
 export interface IStoreUser extends Pick<IUser, "name" | "lastname" | "phone" | "adress" | "role" | "id_cognito"> {}

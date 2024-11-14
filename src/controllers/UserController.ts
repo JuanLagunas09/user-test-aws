@@ -29,9 +29,26 @@ export const store = async (
       config.KEY_CONNECT!,
       config.JWT_SECRET_CONNECT!
     );
-    
+
     const resAuth = await userService.store(req.body, token);
     res.json(resAuth);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
+export const show = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const token: any = req.headers.authorization;
+
+    if (!token) {
+      throw new Error("Token or user not found");
+    }
+
+    const data = await userService.show(token);
+
+    res.status(200).json(data);
   } catch (error) {
     console.log(error);
     next(error);
