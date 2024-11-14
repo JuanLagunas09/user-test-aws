@@ -8,6 +8,6 @@ Router.get('/hello', UserController.getHelloAuth);
 Router.post('/register', UserController.store);
 Router.get('/show', 
     passport.authenticate('jwt', { session: false }),
-    UserController.show);
+    UserController.show); // Add this line
 
 export default Router;
