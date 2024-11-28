@@ -47,8 +47,7 @@ export class UserService {
 
       throw boom.badRequest("Error in register user");
     } catch (error: any) {
-      console.log(error);
-      throw boom.badRequest("Error in signupCognito");
+      throw boom.badRequest("Error in signupCognito" + error);
     }
   }
 

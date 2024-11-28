@@ -26,16 +26,16 @@ app.use(boomHandler);
 app.use(errorHandler);
 
 // Start server locally
-/* app.listen(config.PORT, () => {
+app.listen(config.PORT, () => {
   try {
     console.log(`Server running on port ${config.PORT}`);
     dbConnection.initialize();
   } catch (error) {
     console.log("Error starting server", error);
   }
-}); */
+});
 
-const initApp = async () => {
+/* const initApp = async () => {
   try {
     console.log("Initializing app");
     await dbConnection.initialize();
@@ -44,6 +44,6 @@ const initApp = async () => {
   }
 }
 
-initApp();
+initApp(); */
 
 export default app;

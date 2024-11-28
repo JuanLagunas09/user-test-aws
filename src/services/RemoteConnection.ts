@@ -13,6 +13,7 @@ export const getHelloAuth = async () => {
 
 export const signupCognito = async (data: any, token: string) => {
   try {
+    console.log(data, token);
     const response = await axios({
       method: "POST",
       url: `${config.URL_AUTH_MSV}/signup`,
