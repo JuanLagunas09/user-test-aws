@@ -14,7 +14,6 @@ export const getHelloAuth = async (
     const getHelloAuth = await userService.getHelloAuth();
     res.status(200).json(getHelloAuth);
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };
@@ -29,12 +28,9 @@ export const store = async (
       config.KEY_CONNECT!,
       config.JWT_SECRET_CONNECT!
     );
-    console.log("regiter...");
     const resAuth = await userService.store(req.body, token);
-    console.log(resAuth);
     res.json(resAuth);
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };
@@ -51,7 +47,6 @@ export const show = async (req: Request, res: Response, next: NextFunction) => {
 
     res.status(200).json(data);
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };

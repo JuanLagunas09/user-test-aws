@@ -13,7 +13,6 @@ export const getHelloAuth = async () => {
 
 export const signupCognito = async (data: any, token: string) => {
   try {
-    console.log(data, token);
     const response = await axios({
       method: "POST",
       url: `${config.URL_AUTH_MSV}/signup`,
@@ -22,10 +21,8 @@ export const signupCognito = async (data: any, token: string) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(response);
     return response.data;
   } catch (error: any) {
-    console.log(error);
     throw boom.badRequest("Error in connect signup " + error);
   }
 };
